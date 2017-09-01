@@ -76,7 +76,7 @@ end
 def restart
   if running?
     puts "Restarting <%= @name.capitalize %> #{APP_NAME}"
-    run_and_ignore_exitcode_and_print_command "kill -USR2 `cat #{PID_PATH}`"
+    run_and_ignore_exitcode_and_print_command "kill -<%= @name == 'puma' ? 'USR1' : 'USR2' %> `cat #{PID_PATH}`"
   else
     start
   end

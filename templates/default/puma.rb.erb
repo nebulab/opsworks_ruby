@@ -11,6 +11,8 @@ directory "<%= @deploy_dir %>/current"
                                 .satisfied_by?(Gem::Version.new(Rails.version))
     ActiveRecord::Base.establish_connection
   end
+<% else %>
+  prune_bundler
 <% end %>
 
 # Set the environment in which the rack's app will run. The value must be a string.

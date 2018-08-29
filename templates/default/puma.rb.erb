@@ -147,4 +147,4 @@ end
 worker_timeout <%= @out[:timeout] %>
 
 # Allow puma to be restarted by `rails restart` command.
-plugin :tmp_restart if Gem.loaded_specs['puma'].version >= Gem::Version.new('3.0')
+# plugin :tmp_restart if Gem.loaded_specs['puma'].version >= Gem::Version.new('3.0')
